@@ -39,7 +39,7 @@ var orm = {
 
   all: function(table, cb) {
     var queryString = "SELECT * FROM ??";
-    connection.query(queryString, [table], function(err, result) {
+    connection.query(queryString, [table, cb], function(err, result) {
       if (err) {
         throw err;
       }
